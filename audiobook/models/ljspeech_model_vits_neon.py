@@ -3,7 +3,7 @@ from TTS.api import TTS
 
 class LJSpeechModel:
     def __init__(self):
-        self.model_name = "tts_models/en/ljspeech/neural_hmm"
+        self.model_name = "tts_models/en/ljspeech/vits--neon"
         self.model = TTS(model_name=self.model_name)
         print(f"Loaded model: {self.model_name}")
 

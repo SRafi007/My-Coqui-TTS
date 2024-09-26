@@ -5,10 +5,11 @@ from audiobook.models.ek1_model import EK1Model
 from audiobook.models.fastspeech2_model import FastSpeech2Model
 from audiobook.models.ljspeech_model_neural_hmm import LJSpeechModel
 
-class TTSService:
+class TestService:
     def __init__(self, model_class=VCTKModel):
         """Initialize the TTS service with a specified model class."""
         self.model_instance = model_class()  # Create an instance of the model
+        #self.model_instance=model_class(config['tts_models/en/vctk/vits'])
         self.output_dir = "audiobook/output"
         os.makedirs(self.output_dir, exist_ok=True)  # Ensure output directory exists
 
@@ -34,5 +35,5 @@ class TTSService:
             print(f"Generated audio saved to {output_path}.")
         """
 
-        self.model_instance.tts_to_file(text=text,speed=0.7,pitch=0.8, output_path=output_path, speaker=speakers[6])
+        self.model_instance.text_to_speech(text=text, output_path=output_path, speaker=speakers[6])
         print(f"Generated audio saved to {output_path}.")

@@ -3,7 +3,7 @@ from TTS.api import TTS
 
 class FastSpeech2Model:
     def __init__(self):
-        self.model_name = "tts_models/en/fastspeech2/condensed"
+        self.model_name = "tts_models/en/ljspeech/fastspeech2"  # Updated model name
         self.model = TTS(model_name=self.model_name)
         print(f"Loaded model: {self.model_name}")
 

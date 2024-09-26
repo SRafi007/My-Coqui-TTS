@@ -1,5 +1,6 @@
 import os
 from audiobook.services.tts_service import TTSService
+from audiobook.services.test_service import TestService
 
 def read_input_file(file_path):
     with open(file_path, "r", encoding="utf-8") as file:
@@ -12,7 +13,8 @@ def chunk_text(text, chunk_size=500):  # Adjust chunk size as necessary
 
 def main():
     input_file_path = "audiobook/input/input.txt"
-    tts_service = TTSService()  # Initialize TTS service
+    #tts_service = TTSService()  # Initialize TTS service
+    tts_service = TestService()  # Initialize Test service
     
     # Read the input text
     text = read_input_file(input_file_path)
